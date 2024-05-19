@@ -1,6 +1,6 @@
 const Navbar = () => {
     return (
-        <div className="">
+        <div>
             <div className="navbar lg:gap-28">
                 <h2 className="text-3xl font-bold">RecipeNest</h2>
                 <div className="md:hidden flex flex-grow justify-end">
