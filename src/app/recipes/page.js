@@ -2,6 +2,7 @@
 
 import Footer from '@/components/shared/Footer';
 import Navbar from '@/components/shared/Navbar';
+import FilterItem from '@/components/ui/FilterItem';
 import RecipeCard from '@/components/ui/RecipeCard';
 import { getAllRecipes } from '@/components/utils/getAllRecipes';
 import { useEffect, useState } from 'react';
@@ -10,6 +11,7 @@ const RecipesPage = () => {
     const [data, setData] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
+    const [filters, setFilters] = useState({ category: [], flavor: [], cuisine: [] });
 
     useEffect(() => {
         const fetchData = async () => {
@@ -27,6 +29,21 @@ const RecipesPage = () => {
     }, [searchTerm, data]);
 
 
+    useEffect(() => {
+        let filtered = data;
+        if (filters.category.length > 0) {
+            filtered = filtered.filter(item => filters.category.includes(item.category));
+        }
+        if (filters.flavor.length > 0) {
+            filtered = filtered.filter(item => filters.flavor.includes(item.flavor));
+        }
+        if (filters.cuisine.length > 0) {
+            filtered = filtered.filter(item => filters.cuisine.includes(item.cuisine));
+        }
+        setFilteredData(filtered);
+    }, [filters, data]);
+
+
     return (
         <div>
             <Navbar></Navbar>
@@ -38,13 +55,20 @@ const RecipesPage = () => {
 
                 <div className='flex justify-between mb-10'>
                     <div className='w-1/6'>
-                        <h2>Filter</h2>
+                        <FilterItem filters={filters} setFilters={setFilters}></FilterItem>
                     </div>
-                    <div className='w-4/5 grid lg:grid-cols-2 gap-5'>
-                        {
-                            filteredData?.map((item) => <RecipeCard key={item.id} item={item}></RecipeCard>)
-                        }
-                    </div>
+                    {
+                        filteredData.length === 0 ?
+                            <>
+                                <h2 className='w-full text-center text-xl lg:pt-20'>No Items Found</h2>
+                            </>
+                            :
+                            <div className='w-4/5 grid lg:grid-cols-2 gap-5'>
+                                {
+                                    filteredData?.map((item) => <RecipeCard key={item.id} item={item}></RecipeCard>)
+                                }
+                            </div>
+                    }
                 </div>
             </div>
             <Footer></Footer>
