@@ -12,7 +12,7 @@ const HomePage = () => {
       <Navbar></Navbar>
       <Banner></Banner>
       <FeaturedRecipes></FeaturedRecipes>
-      <div className='lg:-mx-20'>
+      <div className='-mx-2 md:-mx-5 lg:-mx-20'>
         <Follow></Follow>
       </div>
       <Footer></Footer>

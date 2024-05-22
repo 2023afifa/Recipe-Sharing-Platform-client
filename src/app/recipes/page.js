@@ -49,7 +49,7 @@ const RecipesPage = () => {
             <Navbar></Navbar>
             <div className='min-h-screen mt-5'>
                 <div className='flex justify-center items-center gap-5 mb-10'>
-                    <h2 className='text-2xl'>Search Recipes Here</h2>
+                    <h2 className='text-lg md:text-2xl'>Search Recipes Here</h2>
                     <input value={searchTerm} onChange={e => setSearchTerm(e.target.value)} type="text" placeholder="Type here" className="input input-bordered border-slate-700 w-full max-w-md" />
                 </div>
 

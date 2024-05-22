@@ -11,8 +11,8 @@ const RecipeDetailsPage = async ({ params }) => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className='md:flex md:justify-center md:items-center lg:gap-10 mt-5 mb-10'>
-                <div className='w-2/5'>
+            <div className='flex flex-col-reverse lg:flex-row lg:justify-center lg:items-center lg:gap-10 mt-5 mb-10'>
+                <div className='w-full lg:w-2/5'>
                     <p className='text-slate-500 mb-2'>{getDate(data.postingDate)}</p>
                     <div className='flex items-center gap-4 mb-2'>
                         <h2 className='text-4xl'>{data.name}</h2>
@@ -34,7 +34,7 @@ const RecipeDetailsPage = async ({ params }) => {
                 </div>
                 <div className='relative'>
                     <Image className='rounded' src={data.image} alt='Food' width={700} height={100} />
-                    <span className='absolute text-xl text-slate-200 bg-slate-800 px-6 py-1 lg:bottom-3 lg:left-3'>{data.name}</span>
+                    <span className='absolute text-xl text-slate-200 bg-slate-800 px-6 py-1 bottom-3 left-3'>{data.name}</span>
                 </div>
             </div>
             <Footer></Footer>

@@ -12,7 +12,7 @@ const FilterItem = ({ filters, setFilters }) => {
 
     return (
         <div className=''>
-            <span className='text-xl bg-lime-400 px-3 rounded-sm'>Choose Yours</span>
+            <span className='text-xl bg-lime-400 md:px-3 rounded-sm'>Choose Yours</span>
             <div className='my-5'>
                 <span className='text-lg bg-slate-800 text-slate-200 px-2 rounded-sm'>Category</span>
                 <div className='my-2 flex gap-2'>

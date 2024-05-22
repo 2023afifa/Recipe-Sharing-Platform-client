@@ -11,7 +11,7 @@ const FeaturedRecipes = async () => {
     return (
         <div className="my-14">
             <h3 className="text-3xl font-medium mb-5">Recipe Blogs</h3>
-            <div className='grid lg:grid-cols-4 gap-5 mb-5'>
+            <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-5'>
                 {
                     featuredItems?.map((item) => <FeaturedRecipe key={item.id} item={item}></FeaturedRecipe>)
                 }
