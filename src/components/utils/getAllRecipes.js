@@ -1,5 +1,5 @@
 export const getAllRecipes = async () => {
-    const res = await fetch("http://localhost:5000/recipes", {
+    const res = await fetch("https://recipesharingserver.vercel.app/recipes", {
         next: {
             revalidate: 30,
         }

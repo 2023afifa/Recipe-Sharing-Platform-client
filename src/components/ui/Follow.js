@@ -14,7 +14,7 @@ const Follow = () => {
             </div>
             <div className='max-w-xs lg:max-w-md text-center mx-auto'>
                 <h2 className='text-2xl mb-5'>PINCH OF YUM COOKBOOK</h2>
-                <p>The eBook includes our most popular 25 recipes in a beautiful, easy to download format. Enter your email and we'll send it right over!</p>
+                <p>The eBook includes our most popular 25 recipes in a beautiful, easy to download format. Enter your email and we will send it right over!</p>
             </div>
             <div className='relative mx-auto'>
                 <Image className='rounded-sm' src="https://i.ibb.co/jGfrZzQ/pexels-chanwalrus-958545.jpg" alt="Food" width={400} height={50} />
